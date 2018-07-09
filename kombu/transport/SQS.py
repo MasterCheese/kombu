@@ -203,7 +203,7 @@ class Channel(virtual.Channel):
                 kwargs['MessageGroupId'] = \
                     message['properties']['MessageGroupId']
             else:
-                kwargs['MessageGroupId'] = 'default'
+                kwargs['MessageGroupId'] = str(uuid.uuid4())
             if 'MessageDeduplicationId' in message['properties']:
                 kwargs['MessageDeduplicationId'] = \
                     message['properties']['MessageDeduplicationId']
